@@ -1,5 +1,7 @@
 package com.basics.ioc.beans;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import com.basics.ioc.interfaces.Coach;
 import com.basics.ioc.interfaces.FortuneService;
 
@@ -21,6 +23,14 @@ public class TrackCoach implements Coach {
 
 	public void setTeamName(String teamName) {
 		this.teamName = teamName;
+	}
+	
+	public void initMethod() {
+		System.out.println("Init method called");
+	}
+	
+	public void destroyMethod() {
+		System.out.println("Destroy method called");
 	}
 	
 	@Override

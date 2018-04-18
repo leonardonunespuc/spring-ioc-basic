@@ -11,13 +11,17 @@
 	<bean id="myFortune" class="com.basics.ioc.beans.HappyFortuneService">
 	</bean>
 
-	<bean id="myTrackCoach" class="com.basics.ioc.beans.TrackCoach">
+	<bean id="myTrackCoach" class="com.basics.ioc.beans.TrackCoach" init-method="initMethod" destroy-method="destroyMethod">
 		<property name="fortuneService" ref="myFortune"></property>
 		<property name="emailAddress" value="${foo.email}"></property>
 		<property name="teamName" value="${foo.team}"></property>
 	</bean>
 
-	<bean id="myCoach" class="com.basics.ioc.beans.BaseballCoach" scope="singleton">
+	<bean id="myBaseballCoach" class="com.basics.ioc.beans.BaseballCoach" scope="singleton">
+		<constructor-arg ref="myFortune"></constructor-arg>
+	</bean>
+	
+	<bean id="mySoccerCoach" class="com.basics.ioc.beans.SoccerCoach" scope="prototype">
 		<constructor-arg ref="myFortune"></constructor-arg>
 	</bean>
 
