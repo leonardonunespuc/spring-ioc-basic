@@ -1,5 +1,8 @@
 package com.basics.ioc;
 
+import com.basics.ioc.beans.TrackCoach;
+import com.basics.ioc.interfaces.Coach;
+
 /**
  * Hello world!
  *
